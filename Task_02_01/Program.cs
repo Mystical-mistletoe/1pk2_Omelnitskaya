@@ -2,11 +2,13 @@
 {
     internal class Program
     {
+        /*Найти значение выражения 
+        * при a = 0, b = 6, c = 2
+        */
+
         static void Main(string[] args)
         {
-            /*Найти значение выражения 
-            * при a = 0, b = 6, c = 2
-            */
+            
             double a = 0;
             double b = 6;
             double c = 2;
@@ -18,7 +20,6 @@
 
             double result = part1 - part2 * (part3 / part4);
             Console.WriteLine(Math.Round(result, 2));
-
-            }
+        }
     }
 }
