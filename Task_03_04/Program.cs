@@ -13,15 +13,19 @@
         {
             int a = 0;
             string customText;
-            Console.WriteLine("вводите текст, для остановки ввода введите слово «exit» или пустую строку");
-            do
+            while (true)
             {
-                customText = Console.ReadLine();
-                a++;
                 Console.Clear();
+                Console.WriteLine("вводите текст, для остановки ввода введите слово «exit» или пустую строку");
+                customText = Console.ReadLine();
+                
+                if (customText == "exit" || customText.Length == 0) // или customText == string.Empty
+                {
+                    break;
+                }
+                a++;
             }
-            while (customText != "exit" && customText != " ");
-            Console.WriteLine($"вы ввели {a-1} строк(у)");
+            Console.WriteLine($"вы ввели {a} строк(у)");
         }
     }
 }
