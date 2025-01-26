@@ -9,7 +9,7 @@
         {
             Console.WriteLine($"Значения функции y=|x|");
 
-            for (double x = -4; x <= 4; x += 0.5) //цикл ограничен количеством попыток
+            for (double x = -4; x <= 4; x += 0.5)
             {
                 double Answer = Math.Abs(x);
                 Console.WriteLine($"y=|{x}|-->\t{Answer}");

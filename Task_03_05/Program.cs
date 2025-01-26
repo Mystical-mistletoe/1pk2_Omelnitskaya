@@ -28,6 +28,7 @@ namespace Task_03_05
                     break;
                 }
                 double Answer = i * 1.8 + 32;
+                //перевод в Фаренгейты
                 Console.WriteLine($"{i}\t{Answer}");
 
                 

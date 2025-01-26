@@ -19,6 +19,8 @@
                 Console.WriteLine("вводите текст, для остановки ввода введите слово «exit» или пустую строку");
                 customText = Console.ReadLine();
                 
+                // проверка на остановку ввода 
+
                 if (customText == "exit" || customText.Length == 0) // или customText == string.Empty
                 {
                     break;
