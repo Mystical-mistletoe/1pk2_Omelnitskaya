@@ -19,19 +19,50 @@
             int n = 3;
 
             int[,] numbers = new int[n, n];
-
+            bool flag = false;
             Random random = new Random();
 
             for (int i = 0; i < numbers.GetLength(0); i++)
             {
                 for (int j = 0; j < numbers.GetLength(1); j++)
                 {
-                    numbers[i, j] = random.Next(0, 21);
+                    numbers[i, j] = random.Next(0, 2);
                     Console.Write(numbers[i, j] + " ");
                 }
                 Console.WriteLine();
             }
-           
+            for (int i = 0; i < numbers.GetLength(0); i++)
+            {
+                for (int j = 0; j < numbers.GetLength(1); j++)
+                {
+                    if (numbers[i, j] != 0 && i != j)
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+            if (flag)
+            {
+                Console.WriteLine("матрица не является диагональной");
+            }
+            else
+            {
+                Console.WriteLine("вывод матрицы с выделением главной диагонали:");
+                for (int i = 0; i < numbers.GetLength(0); i++)
+                {
+                    for (int j = 0; j < numbers.GetLength(0); j++)
+                    {
+                        if (i ==j)
+                        {
+                            Console.BackgroundColor = ConsoleColor.Green;
+                        }
+                        Console.Write(numbers[i, j] + " ");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                    }
+                    Console.WriteLine();
+                }
+            }
         }
     }
 }
