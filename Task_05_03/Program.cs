@@ -79,37 +79,56 @@ namespace Task_05_03
 
                 Console.WriteLine();
             }
-
             */
 
             Console.WriteLine("=>");
+            bool flag = false;
 
             for (int i = 0; i < charsOne.GetLength(0); i++)
             {
                 for (int j = 0; j < charsOne.GetLength(1); j++)
                 {
-                    if (charsOne[i, j] == charsTwo[i, j]) 
+                    if (charsOne[i, j] != charsTwo[i, j])
                     {
-                        Console.BackgroundColor = ConsoleColor.Red;
+                        flag = true;
+                        break;
                     }
-                    Console.Write(charsOne[i, j] + " ");
-                    Console.BackgroundColor = ConsoleColor.Black;
                 }
-
-                Console.Write("\t");
-
-                for (int j = 0; j < charsOne.GetLength(1); j++)
-                {
-                    if (charsOne[i, j] == charsTwo[i, j])
-                    {
-                        Console.BackgroundColor = ConsoleColor.Red;
-                    }
-                    Console.Write(charsTwo[i, j] + " ");
-                    Console.BackgroundColor = ConsoleColor.Black;
-                }
-
-                Console.WriteLine();
             }
+            if (flag)
+            {
+                for (int i = 0; i < charsOne.GetLength(0); i++)
+                {
+                    for (int j = 0; j < charsOne.GetLength(1); j++)
+                    {
+                        if (charsOne[i, j] == charsTwo[i, j])
+                        {
+                            Console.BackgroundColor = ConsoleColor.Red;
+                        }
+                        Console.Write(charsOne[i, j] + " ");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                    }
+
+                    Console.Write("\t");
+
+                    for (int j = 0; j < charsOne.GetLength(1); j++)
+                    {
+                        if (charsOne[i, j] == charsTwo[i, j])
+                        {
+                            Console.BackgroundColor = ConsoleColor.Red;
+                        }
+                        Console.Write(charsTwo[i, j] + " ");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                    }
+
+                    Console.WriteLine();
+                }
+            }
+            else
+            {
+                Console.WriteLine("матрицы равны");
+            }
+
 
         }
     }
