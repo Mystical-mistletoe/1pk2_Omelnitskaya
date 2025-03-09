@@ -23,8 +23,8 @@
         /// <summary>
         /// подсчитывает колво гл и согл букв в строке
         /// </summary>
-        /// <param name="cVowels">целое число 1</param>
-        /// /// <param name="cConsonats">целое число 2</param>
+        /// <param name="cVowels">колво гласных</param>
+        /// /// <param name="cConsonats">колво согласных</param>
         /// <returns>количество гласных и согласных букв</returns>
         static void VowelsConsonants(string strochka, out int cVowels, out int cConsonats)
         {
