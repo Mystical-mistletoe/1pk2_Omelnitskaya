@@ -46,7 +46,7 @@ namespace Task_11_06
             Console.WriteLine("Измененный массив:");
             for (int i = 0; i < num.Length; i++)
             {
-                num[i] += 1;
+                num[i]++;
             }
             for (int i = 0; i < num.Length; i++)
             {
