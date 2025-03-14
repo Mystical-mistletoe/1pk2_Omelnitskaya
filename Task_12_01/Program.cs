@@ -65,6 +65,38 @@ namespace Task_12_01
             //просмотр содержания НЕ купленного журнала
             journal2.ViewJournal();
 
+            Console.WriteLine();
+
+            Newspaper newspaper1 = new Newspaper();
+            newspaper1.title = "Ежедневный пророк";
+            newspaper1.pageCount = 6;
+            newspaper1.publicationDate = "13.03.2025";
+            newspaper1.price = 80;
+            newspaper1.headNewspaper = "Сенсация! Мальчик-который-выжил на самом деле ...";
+            newspaper1.GetInfo();
+
+            //покупка газеты
+            newspaper1.BuyNewspaper(); // куплена
+
+            //попытка купить уже купленную газету
+            newspaper1.BuyNewspaper(); // не выходит
+
+            //просмотр содержания купленной газеты
+            newspaper1.ViewNewspaper();
+
+            Console.WriteLine();
+
+            Newspaper newspaper2 = new Newspaper();
+            newspaper2.title = "Какая-то другая газета";
+            newspaper2.pageCount = 3;
+            newspaper2.publicationDate = "01.11.1941";
+            newspaper2.price = 20;
+            newspaper2.headNewspaper = "Что-то очень интересное";
+            newspaper2.GetInfo();
+
+            //просмотр содержания НЕ купленной газеты
+            newspaper2.ViewNewspaper();
+
         }
     }
 }

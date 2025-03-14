@@ -13,9 +13,9 @@ namespace Task_12_01.Publications
         public string title; //поле класса - хранит название журнала
         public int pageCount; //поле класса - хранит количество страниц
         public double price; //поле класса - хранит цена
-        public string content; //поле класса - хранит название журнала
+        public string content; //поле класса - хранит содержание журнала
         bool isBuy = false; //поле класса - статус продано/нет
-        //метод класса - печатает в консоль информацию о книге
+        //метод класса - печатает в консоль информацию о журнале
         public void GetInfo()
         {
             Console.WriteLine($"{title}. Дата издания - {publicationDate}, предметно-тематическая направленность - {subjectArea}, количество страниц - {pageCount}");
