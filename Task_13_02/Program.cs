@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace Task_13_02
+﻿namespace Task_13_02
 {
     internal class Program
     {
@@ -20,7 +18,7 @@ namespace Task_13_02
             {
                 Name = "Дашка",
                 Species = "Волнистик",
-                Age = 6
+                IsHealthy = true,
             };
             Console.WriteLine(pet3.GetInfo());
 

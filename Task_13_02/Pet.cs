@@ -106,6 +106,7 @@ namespace Task_13_02
             Name = name;
             Species = species;
             Age = age;
+            IsHealthy = true; // По умолчанию питомец здоров
         }
         /// <summary>
         /// полный конструктор, с помощью которого заполняются данными все поля
@@ -120,6 +121,7 @@ namespace Task_13_02
             Species = species;
             Age = age;
             Weight = weight;
+            IsHealthy = true; // По умолчанию питомец здоров
         }
         /// <summary>
         /// полный конструктор, с помощью которого заполняются данными все поля
@@ -141,19 +143,14 @@ namespace Task_13_02
         /// конструтор по умолчанию, который становиться недоступным как только прописываются
         /// остальные конструкторы и его необходимо явно прописать
         /// </summary>
-        public Pet() { }
+        public Pet() { IsHealthy = true; }
         #endregion
 
-
-
-
-
-
-        #region методы
-        /// <summary>
-        /// возврат текущей информации по объекту
-        /// </summary>
-        /// <returns>строка с информацией</returns>
+            #region методы
+            /// <summary>
+            /// возврат текущей информации по объекту
+            /// </summary>
+            /// <returns>строка с информацией</returns>
         public string GetInfo()
         {
             return $"Кличка: {Name}\n" + $"Вид: {Species}\n" + $"Возраст: {Age}\n" + $"Вес: {Weight} кг\n" + $"Состояние здоровья: {(IsHealthy ? "Здоров" : "Нездоров")}\n";
@@ -163,17 +160,10 @@ namespace Task_13_02
         /// изменение веса
         /// </summary>
         /// <returns>строка с информацией</returns>
-        public string ChangeWeight(double newWeight)
+        public void ChangeWeight(double newWeight)
         {
-            if (newWeight > 0)
-            {
-                Weight = newWeight;
-                Console.WriteLine($"Вес {Name} изменен на {Weight}");
-            }
-            else
-            {
-                Console.WriteLine("Вес отрицательный");
-            }
+            Weight = newWeight;
+            Console.WriteLine($"Вес {Name} изменен на {Weight}");
         }
 
         /// <summary>
