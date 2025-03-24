@@ -37,6 +37,7 @@
             {
                 Console.WriteLine(sentence);
             }
+
         }
     }
 }
