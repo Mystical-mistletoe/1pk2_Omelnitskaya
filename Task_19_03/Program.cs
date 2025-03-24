@@ -22,7 +22,36 @@
          */
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string[] lines = new string[10];
+            int n = 10;
+            int lineCount = 0; //кол-во введенных строк
+
+            while (true)
+            {
+                Console.Write($"Введите строку {lineCount + 1} (или пустую строку для завершения):");
+                string str1 = Console.ReadLine();
+
+                //если пустая строка то конец
+                if (string.IsNullOrEmpty(str1))
+                    break;
+
+                //при запол массиве увел размер
+                if (lineCount == n)
+                {
+                    n *= 2;
+                    string[] newLines = new string[n];
+                    Array.Copy(lines, newLines, lineCount);
+                    lines = newLines;
+                }
+                lines[lineCount] = str1;
+                lineCount++;
+            }
+            Array.Resize(ref lines, lineCount);
+            string combinedString = string.Join("-", lines);
+
+
+            Console.WriteLine("Результат: " + combinedString);
+
         }
     }
 }
