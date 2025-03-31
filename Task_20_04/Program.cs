@@ -17,7 +17,45 @@
          */
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            List<VehicleType> vehicles = new List<VehicleType>() {
+            VehicleType.Truck, VehicleType.Car, 
+            VehicleType.Truck, VehicleType.Bike, 
+            VehicleType.Car, VehicleType.Motorcycle, 
+            VehicleType.Truck, VehicleType.Car
+            };
+
+            //подсчет транспорта определен типа
+            VehicleType truckCount = VehicleType.Truck;
+            int count = 0;
+            foreach (VehicleType vehicle in vehicles)
+            {
+                if (vehicle == truckCount)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine($"Количество {truckCount}: {count}");
+
+
+            //поиск и вывод инфы о всех транспортных средствах определен типа
+            VehicleType toSearch = VehicleType.Car;
+
+            List<VehicleType> foundVehicles = new List<VehicleType>();
+            foreach (VehicleType vehicle in vehicles)
+            {
+                if (vehicle == toSearch)
+                {
+                    foundVehicles.Add(vehicle);
+                }
+            }
+
+            Console.WriteLine($"\nНайденные транспортные средства типа {toSearch}:");
+            foreach (var vehicle in foundVehicles)
+            {
+                Console.WriteLine(vehicle);
+            }
+
+            Console.ReadKey();
         }
     }
 }
