@@ -26,7 +26,7 @@
             Console.WriteLine("\nСлова:");
             foreach (string word in words)
             {
-                Console.WriteLine(word);
+                Console.WriteLine(word.Trim(new char[] { ',', '.', ';', '!', '?'}));
             }
             //b) По предложениям (отдельные предложения построчно)
             char[] separator = { '.', '!', '?'};
