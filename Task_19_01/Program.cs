@@ -32,7 +32,7 @@
                 string replaceStr1 = Console.ReadLine();
 
                 string resStr1 = str1.Replace(searchStr1, replaceStr1);
-                Console.WriteLine("Результат: " + resStr1);
+                Console.WriteLine("Результат: \n" + resStr1);
             }
             else
             {
