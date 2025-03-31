@@ -28,7 +28,7 @@
 
             while (true)
             {
-                Console.Write($"Введите строку {lineCount + 1} (или пустую строку для завершения):");
+                Console.Write($"Введите строку {lineCount + 1} (или пустую для завершения):");
                 string str1 = Console.ReadLine();
 
                 //если пустая строка то конец
@@ -47,11 +47,8 @@
                 lineCount++;
             }
             Array.Resize(ref lines, lineCount);
-            string combinedString = string.Join("-", lines);
-
-
-            Console.WriteLine("Результат: " + combinedString);
-
+            string endString = string.Join("-", lines);
+            Console.WriteLine("Результат: \n" + endString);
         }
     }
 }
