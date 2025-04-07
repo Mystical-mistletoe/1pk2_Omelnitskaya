@@ -9,7 +9,7 @@
         {
             List<int> numbers = new List<int> { 1, 2, 2, 3, 4, 4, 1, 5 };
 
-            List<int> uniqueNumbers = RemoveDuplicatesPreserveOrder2(numbers);
+            List<int> uniqueNumbers = RemoveDuplicates(numbers);
 
             foreach (int number in uniqueNumbers)
             {
@@ -17,7 +17,7 @@
             }
         }
 
-        public static List<int> RemoveDuplicatesPreserveOrder2(List<int> list)
+        public static List<int> RemoveDuplicates(List<int> list)
         {
             List<int> result = new List<int>();
             HashSet<int> seen = new HashSet<int>();
