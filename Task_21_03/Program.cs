@@ -60,9 +60,14 @@
                     book.PrintInfo();
             }
 
-            Console.WriteLine("самые старые книги:");
+            Console.WriteLine("\n\nсамые старые книги:");
             List<Book> mins = GetMinYearBooks(books);
             foreach (var book in mins)
+                book.PrintInfo();
+
+            Console.WriteLine("\n\nсамые новые книги:");
+            List<Book> maxs = GetMaxYearBooks(books);
+            foreach (var book in maxs)
                 book.PrintInfo();
         }
         // ДЗ. создать список для вывода всех самых новых книг (по году издания)
@@ -82,6 +87,26 @@
                     minBooks.Add(book);
             }
             return minBooks;
+        }
+
+        static List<Book> GetMaxYearBooks(List<Book> books)
+        {
+            int maxYear = 0;
+            List<Book> maxBooks = new();
+
+            foreach (var book in books)
+            {
+                if (book.Year > maxYear)
+                    maxYear = book.Year;
+            }
+
+            foreach (var book in books)
+            {
+                if (book.Year == maxYear)
+                    maxBooks.Add(book);
+            }
+
+            return maxBooks;
         }
     }
 }

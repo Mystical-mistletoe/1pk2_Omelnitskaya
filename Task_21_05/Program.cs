@@ -12,6 +12,9 @@
             TrainSystem train = new TrainSystem();
 
             train.ReserveTicket(10, "Иванов");
+            train.ReserveTicket(10, "Кукушкин");
+            train.ReturnTicket(10);
+            train.ReturnTicket(11);
         }
     }
 }
