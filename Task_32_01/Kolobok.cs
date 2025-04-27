@@ -9,7 +9,7 @@ namespace Task_32_01
     public class Kolobok
     {
         public int Position { get; private set; }
-        public int Speed { get; }
+        public int Speed { get; set; }
         public bool IsAlive { get; private set; }
         public Kolobok()
         {
@@ -19,8 +19,16 @@ namespace Task_32_01
         }
         public void Roll()
         {
-            Position += Speed;
-            Console.WriteLine($"Колобок катится, текущая позиция: {Position}");
+            if (Speed > 0)
+            {
+                Position += Speed;
+                Console.WriteLine($"Колобок катится, текущая позиция: {Position}");
+                Speed += 1;
+            }
+            else
+            {
+                Console.WriteLine($"Колобок застрял! Скорость: {Speed}");
+            }
         }
         //встреча с животным
         public void MeetAnimal(Animal animal)
@@ -34,6 +42,13 @@ namespace Task_32_01
             {
                 Console.WriteLine($"Колобок убежал от {animal.Name}!");
             }
+        }
+
+        public void EncounterObstacle(Obstacle obstacle)
+        {
+            Speed -= obstacle.SlowGO;
+            Console.WriteLine($"Колобок наткнулся на {obstacle.Name}! Скорость уменьшена на {obstacle.SlowGO}.");
+            if (Speed < 0) Speed = 0;
         }
     }
 }

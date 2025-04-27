@@ -1,24 +1,35 @@
-﻿namespace Task_32_01
+﻿using System.Diagnostics.Metrics;
+
+namespace Task_32_01
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Kolobok kolobok = new Kolobok();
-            List<Animal> animals = new List<Animal>
+            List<object> obs = new List<object>
             {
                 new Hare(),
                 new Wolf(),
+                new Grass(),
                 new Bear(),
+                new Ravine(),
                 new Fox()
             };
-            foreach (var animal in animals)
+            foreach (var x in obs)
             {
                 if (!kolobok.IsAlive)
                     break;
 
                 kolobok.Roll();
-                kolobok.MeetAnimal(animal);
+                if (x is Animal animal)
+                {
+                    kolobok.MeetAnimal(animal);
+                }
+                else if (x is Obstacle obstacle)
+                {
+                    kolobok.EncounterObstacle(obstacle);
+                }
             }
             if (kolobok.IsAlive)
             {
