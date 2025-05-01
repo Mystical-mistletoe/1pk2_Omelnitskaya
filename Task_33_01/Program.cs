@@ -14,7 +14,8 @@
                        new Rectangle(5, 10),
                        new Rectangle(5, 3),
                        new Rectangle(3, 3),
-                       new Rectangle(10, 10)
+                       new Rectangle(10, 10),
+                       new Rectangle(2, 2)
                    };
 
 

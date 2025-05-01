@@ -49,7 +49,7 @@ namespace Task_33_01
             {
                 for (int j = 0; j < width; j++)
                 {
-                    if (j * height <= width * (i + 1))
+                    if (j * height < width * (i + 1))
                     {
                         Console.Write("* ");
                     }
