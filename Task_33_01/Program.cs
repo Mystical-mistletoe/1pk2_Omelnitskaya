@@ -12,7 +12,9 @@
                        new Square(2, 7),
                        new Circle(10),
                        new Rectangle(5, 10),
-                       new Rectangle(5, 3)
+                       new Rectangle(5, 3),
+                       new Rectangle(3, 3),
+                       new Rectangle(10, 10)
                    };
 
 

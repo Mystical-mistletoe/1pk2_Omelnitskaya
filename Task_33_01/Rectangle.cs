@@ -43,12 +43,13 @@ namespace Task_33_01
 
         public void Draw()
         {
+            
             Console.WriteLine();
-            for (int i = 1; i < height+1; i++)
+            for (int i = 0; i < height; i++)
             {
-                for (int j = 1; j < width+1; j++)
+                for (int j = 0; j < width; j++)
                 {
-                    if (j <= (int)(((double)i / height) * width))
+                    if (j * height <= width * (i + 1))
                     {
                         Console.Write("* ");
                     }
