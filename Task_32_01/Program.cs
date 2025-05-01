@@ -10,12 +10,13 @@ namespace Task_32_01
             List<object> obs = new List<object>
             {
                 new Hare(),
+                new Obstacle("Трава", 1),
                 new Wolf(),
-                new Grass(),
+                new Obstacle ("Яма", 2),
                 new Bear(),
-                new Ravine(),
                 new Fox()
             };
+
             foreach (var x in obs)
             {
                 if (!kolobok.IsAlive)

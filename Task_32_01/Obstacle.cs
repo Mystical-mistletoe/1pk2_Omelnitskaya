@@ -6,35 +6,15 @@ using System.Threading.Tasks;
 
 namespace Task_32_01
 {
-    public interface Obstacle
+    public class Obstacle
     {
-        string Name { get; }
-        int SlowGO { get; }
-    }
+        public string Name { get; }
+        public int Slowdown { get; }
 
-    public class Ravine : Obstacle
-    {
-        public string Name
+        public Obstacle(string name, int slowdown)
         {
-            get { return "Овраг"; }
-        }
-
-        public int SlowGO
-        {
-            get { return 5; }
-        }
-    }
-
-    public class Grass : Obstacle
-    {
-        public string Name
-        {
-            get { return "Высокая трава"; }
-        }
-
-        public int SlowGO
-        {
-            get { return 3; }
+            Name = name;
+            Slowdown = slowdown;
         }
     }
 }

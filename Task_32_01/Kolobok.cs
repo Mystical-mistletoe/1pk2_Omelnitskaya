@@ -46,9 +46,18 @@ namespace Task_32_01
 
         public void EncounterObstacle(Obstacle obstacle)
         {
-            Speed -= obstacle.SlowGO;
-            Console.WriteLine($"Колобок наткнулся на {obstacle.Name}! Скорость уменьшена на {obstacle.SlowGO}.");
-            if (Speed < 0) Speed = 0;
+            Console.WriteLine($"Колобок наткнулся на {obstacle.Name}!");
+            if (Speed > obstacle.Slowdown)
+            {
+                Speed -= obstacle.Slowdown;
+                Console.WriteLine($"Скорость Колобка уменьшилась до {Speed}");
+
+            }
+            else
+            {
+                Speed = 0;
+                Console.WriteLine("Колобок застрял!");
+            }
         }
     }
 }
