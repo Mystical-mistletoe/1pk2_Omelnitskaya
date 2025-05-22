@@ -43,7 +43,7 @@ namespace Task_38_04
         {
             if (obj != null && obj is Student student)
             {
-                return (Name + Lastname).CompareTo(student.Name + student.LastName);
+                return (Name + Lastname).CompareTo(student.Name + student.Lastname);
             }
             else
                 throw new ArgumentException();

@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace Task_38_04
 {
-    internal class Class
+    public class Class
     {
         private List<Student> students = new(); //внутренняя (закрытая) коллекция книг
         public List<Student> Students => students; //свойство для чтения коллекции книг
         private string saveFileName = "students.json"; //название файла сохранения
 
         //	Добавление книги во внутреннюю коллекцию
-        public void AddBook(Student student)
+        public void AddStudent(Student student)
         {
             if (student  != null) //исключаем возможность сохранения пустого объекта
             {
@@ -26,7 +26,7 @@ namespace Task_38_04
         }
 
         //	Удаление книги из внутренней коллекции
-        public void RemoveBook(Student student)
+        public void RemoveStudent(Student student)
         {
             if (students.Contains(student)) //проверяем наличие нужного объекта в коллекции
                 students.Remove(student); //удаляяем объект из коллекции
